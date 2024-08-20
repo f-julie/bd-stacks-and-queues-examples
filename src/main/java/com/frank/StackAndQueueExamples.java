@@ -63,30 +63,50 @@ public class StackAndQueueExamples {
 			}
 			
 		System.out.println("\nNumber items in myStack - .size(): " + myStack.size());
-		System.out.println("  Getting Top of myStack - .pop(): "   + myStack.pop());  // get and remove the top element
+		// 10
+		System.out.println("  Getting Top of myStack - .pop(): "   + myStack.pop());
+		// get and remove the top element... Data
 		System.out.println("Number items in myStack - .size(): "   + myStack.size());
-		System.out.println("  Last element in Stack - .get(0): "   + myStack.get(0)); // get and leave element at index 0
-		System.out.println("   Top Element on Stack - .peek(): "   + myStack.peek()); // get and leave the top element
+		// 9
+		System.out.println("  Last element in Stack - .get(0): "   + myStack.get(0));
+		// get and leave element at index 0... Kirk
+		System.out.println("   Top Element on Stack - .peek(): "   + myStack.peek());
+		// get and leave the top element... Geordi
 		System.out.println("Number items in myStack - .size(): "   + myStack.size());
+		// 9
 
 		System.out.println("\nPosition of Spock - .search(\"Spock\"): "   + myStack.search("Spock")); // find position of Spock
 		// Note: This next statement will produce an unexpected result....
-		System.out.println("Retrieve Spock- .get(mystack.search(\"Spock\")): "   + myStack.get(myStack.search("Spock"))); // Retrieve Spock
+		// 8
+
+		System.out.println("Retrieve Spock- .get(mystack.search(\"Spock\")): "   + myStack.get(myStack.search("Spock")));
+		// Retrieve Spock... Geordi
 
 		System.out.println("Number items in myStack - .size(): "   + myStack.size());
+		// 9
 
 		System.out.println("\nCloning myStack - .clone()");
 		//                   cast to the type of the cloned Stack because .clone() returns a generic Object
 		Stack<String> clonedStack = (Stack<String>) myStack.clone();  // Make a copy of a Stack - NOTE: the cast to the type
 
 		System.out.println("Number items in clonedStack - size(): " + clonedStack.size());
+		// 9
 		
 		System.out.println("\nClearing clonedStack - .clear()");
 		clonedStack.clear();  // empty cloned stack
 		
 		System.out.println("Number items in clonedStack - .size(): " + clonedStack.size());
+		// 0
+
 		System.out.println("    Number items in myStack - .size(): " + myStack.size());
-			
+		// 9
+
+		// Go through the stack until it is empty
+		while (!myStack.isEmpty()) {
+			System.out.println(myStack.pop());
+		}
+
+
 		System.out.println("--------------------------------------------");
 /********************************************************************************
  *  Queue - FIFO Collection - like a line at the bank or a drive thru or line at DisneyWorld
@@ -127,13 +147,28 @@ public class StackAndQueueExamples {
 		System.out.println("--------------------------------------------");		
 			
 		System.out.println("\nNumber items in myQueue - .size(): " + myQueue.size());
-		System.out.println(" Getting Top of myQueue - .poll(): " + myQueue.poll());
-		System.out.println("Number items in myQueue - .size(): " + myQueue.size());
-		System.out.println("   Top Element on Queue - .peek(): " + myQueue.peek());
-		System.out.println("Number items in myQueue - .size(): " + myQueue.size());
+		// 6
 
-		System.out.println("    Number items in myQueue - .size(): " + myQueue.size());
-			
+		System.out.println(" Getting Top of myQueue - .poll(): " + myQueue.poll()); // removeFirst
+		// Frank
+
+		System.out.println("Number items in myQueue - .size(): " + myQueue.size());
+		// 5
+
+		System.out.println("   Top Element on Queue - .peek(): " + myQueue.peek()); // first in line
+		// Daniel
+
+		System.out.println("Number items in myQueue - .size(): " + myQueue.size());
+		// 5
+
+		System.out.println(myQueue);
+		//Do not use for loop
+		//Use while loop or iterator
+
+		while (!myQueue.isEmpty()) {
+			// Take one off
+			System.out.println(myQueue.poll());
+		}
 		System.out.println("--------------------------------------------");	
 	}
 
